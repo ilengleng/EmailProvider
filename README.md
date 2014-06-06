@@ -42,6 +42,22 @@ Start Web Service
 sh /apache-tomcat-7.0.54/bin/startup.sh
 ```
 
+Send Email
+--------------
+```sh
+Please create an HTTP service that accepts POST requests with JSON data to a ‘/email’
+Header: Content-type     application/json
+Example Request Payload:
+{
+  “to”: “abc@ok.com”,
+  “to_name”: “Ms. K”,
+  “from”: “noreply@service.com”, 
+  “from_name”: “Cool”,
+  “subject”: “This is an email”, 
+  “body”: “<h1>Your Bill</h1><p>$10</p>”
+}
+```
+
 [Maven]:http://maven.apache.org/download.cgi
 [Tomcat]:http://tomcat.apache.org/download-70.cgi
 [Mailgun]:www.mailgun.com
