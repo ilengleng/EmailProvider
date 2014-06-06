@@ -10,7 +10,9 @@ Please install the following tools:
 Build
 --------------
   - Clone this package
-  - This project uses two email service providers: [Mailgun] and [Mandrill]. Both of then require register and obtain api keys. Please read the doc of two services to get a api key for both of them. Once you have the api keys, please refer to file */EmailProvider/src/main/resources/services.properties*, and put api keys there.
+  - Configure */EmailProvider/src/main/resources/services.properties*:
+  - This project uses two email service providers: [Mailgun] and [Mandrill]. Both of then require register and obtain api keys. Please read the doc of two services to get a api key for both of them. Please put the api keys at this file
+  - The property key emailprovider should be either "mailgun" or "mandrill", which is the defualt eamil provider.
   - In the folder */EmailProvider*, run: 
 ```sh
   mvn package
@@ -20,7 +22,7 @@ Build
 Deployment
 --------------
   - After the tomcat is installed, please go to the folder. e.g. */apache-tomcat-7.0.54*
-  - Copy the generated email-1.0.0-BUILD-SNAPSHOT.war to */apache-tomcat-7.0.54/webapps*
+  - Copy the generated *email-1.0.0-BUILD-SNAPSHOT.war* to */apache-tomcat-7.0.54/webapps*
   - In order to achieve the requirement that the uri is *http://localhost:8080/email*, edit file:
 */apache-tomcat-7.0.54/conf/server.xml*: Add the following lines under <Host> section
 ```sh
