@@ -10,6 +10,7 @@ Please install the following tools:
 Build
 --------------
   - Clone this package
+  - This project uses two email service providers: [Mailgun] and [Mandrill]. Both of then require register and obtain api keys. Please read the doc of two services to get a api key for both of them. Once you have the api keys, please refer to file */EmailProvider/src/main/resources/services.properties*, and put api keys there.
   - In the folder */EmailProvider*, run: 
 ```sh
   mvn package
