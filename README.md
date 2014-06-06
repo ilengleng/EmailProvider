@@ -44,3 +44,5 @@ sh /apache-tomcat-7.0.54/bin/startup.sh
 
 [Maven]:http://maven.apache.org/download.cgi
 [Tomcat]:http://tomcat.apache.org/download-70.cgi
+[Mailgun]:www.mailgun.com
+[Mandrill]:www.mandrillapp.com
