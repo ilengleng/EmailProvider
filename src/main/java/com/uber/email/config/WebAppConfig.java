@@ -40,7 +40,8 @@ public class WebAppConfig {
 			orderedEmailProvider.add(mailgunEmailProvider());
 		} else if (EmailProviderType.MAILGUN.name().equalsIgnoreCase(
 				emailProviderProp)) {
-			Collections.reverse(orderedEmailProvider);
+			orderedEmailProvider.add(mailgunEmailProvider());
+			orderedEmailProvider.add(mandrillEmailProvider());
 		} else {
 			logger.info("[GetEmailProvider] Invalid key: " + emailProviderProp
 					+ " for email provider in properties file");
