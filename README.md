@@ -11,8 +11,8 @@ Build
 --------------
   - Clone this package
   - Configure */EmailProvider/src/main/resources/services.properties*:
-  - This project uses two email service providers: [Mailgun] and [Mandrill]. Both of then require register and obtain api keys. Please read the doc of two services to get a api key for both of them. Please put the api keys at this file
-  - The property key emailprovider should be either "mailgun" or "mandrill", which is the defualt eamil provider.
+  - This project uses two email service providers: [Mailgun] and [Mandrill]. Both of then require register and obtain api keys. Please read the doc of two services to get a api key for both of them. After api keys are generated, please put the api keys at this file.
+  - The property key emailprovider should be either "mailgun" or "mandrill", which is the defualt eamil provider. If property emailprovider is not set in this file, the default email provider is "mandrill".
   - In the folder */EmailProvider*, run: 
 ```sh
   mvn package
@@ -47,7 +47,7 @@ sh /apache-tomcat-7.0.54/bin/startup.sh
 Send Email
 --------------
 ```sh
-Please create an HTTP service that accepts POST requests with JSON data to a ‘/email’
+Please create an HTTP POST requests with JSON data to http://localhost:8080/email
 Header: Content-type     application/json
 Example Request Payload:
 {

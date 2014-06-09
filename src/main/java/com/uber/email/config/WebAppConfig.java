@@ -1,7 +1,6 @@
 package com.uber.email.config;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import org.slf4j.Logger;
