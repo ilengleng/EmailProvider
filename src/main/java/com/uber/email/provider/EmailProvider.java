@@ -120,8 +120,6 @@ public abstract class EmailProvider {
 	/**
 	 * Build a http POST method with parameters in the given request
 	 * 
-	 * @param a
-	 *            valid SendEmailRequest with all fields
 	 * @return a http POST method
 	 */
 	public abstract HttpPost buildHttpPost(SendEmailRequest request);
