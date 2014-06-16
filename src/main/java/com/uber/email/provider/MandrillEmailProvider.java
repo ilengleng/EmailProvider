@@ -13,7 +13,7 @@ import com.uber.email.data.MandrillSendEmailRequest;
 import com.uber.email.data.SendEmailRequest;
 import com.uber.email.exception.EmailProviderServiceException;
 
-@Component("mandrillEmailProvider")
+@Component
 public class MandrillEmailProvider extends EmailProvider {
 	@Override
 	public HttpPost buildHttpPost(SendEmailRequest request) {

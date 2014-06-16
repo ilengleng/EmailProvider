@@ -24,7 +24,7 @@ import com.uber.email.exception.EmailProviderServiceException;
 @PropertySource("classpath:services.properties")
 public abstract class EmailProvider {
 	private static final Logger logger = LoggerFactory
-			.getLogger(MandrillEmailProvider.class);
+			.getLogger(EmailProvider.class);
 	@Autowired
 	protected Environment env;
 
@@ -48,7 +48,9 @@ public abstract class EmailProvider {
 				logger.error("[sendEmailError] " + status + " " + responseText);
 				throw new EmailProviderServiceException(responseText, status);
 			}
-			logger.info("[sendEmailSuccess] " + status + " " + responseText);
+			logger.info("[sendEmailSuccess] with email provider "
+					+ this.getClass().getSimpleName() + ". StatusCode: "
+					+ status + " " + responseText);
 		} catch (IOException e) {
 			throw new EmailProviderServiceException("Internal server error ",
 					HttpStatus.SC_INTERNAL_SERVER_ERROR);

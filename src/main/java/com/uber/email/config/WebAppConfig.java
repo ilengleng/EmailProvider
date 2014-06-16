@@ -28,6 +28,11 @@ public class WebAppConfig {
 
 	@Bean
 	public EmailProviderManager emailProviderManager() {
+		return new EmailProviderManager();
+	}
+
+	@Bean
+	public List<EmailProvider> sourceList() {
 		String emailProviderProp = env
 				.getProperty(EmailProviderConst.EMAIL_PROVIDER_PROP);
 		List<EmailProvider> orderedEmailProvider = new ArrayList<EmailProvider>();
@@ -47,7 +52,7 @@ public class WebAppConfig {
 			throw new RuntimeException(
 					"Invalid key for email provider in properties file");
 		}
-		return new EmailProviderManager(orderedEmailProvider);
+		return orderedEmailProvider;
 	}
 
 	@Bean
@@ -64,5 +69,4 @@ public class WebAppConfig {
 	public EmailProviderService emailProviderService() {
 		return new EmailProviderService(emailProviderManager());
 	}
-
 }
