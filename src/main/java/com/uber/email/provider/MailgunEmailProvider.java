@@ -19,13 +19,13 @@ import com.uber.email.exception.EmailProviderServiceException;
 public class MailgunEmailProvider extends EmailProvider {
 	@Override
 	public HttpPost buildHttpPost(SendEmailRequest request) {
-		HttpPost post = new HttpPost(EmailProviderConst.MAINGUN_API_ENDPOINT);
+		HttpPost post = new HttpPost(EmailProviderConst.MAILGUN_API_ENDPOINT);
 		EntityBuilder entityBuilder = EntityBuilder.create()
 				.setContentType(ContentType.APPLICATION_FORM_URLENCODED)
 				.setParameters(request.toParameters());
 		post.setEntity(entityBuilder.build());
 		String apiKey = env
-				.getProperty(EmailProviderConst.MAINGUN_API_KEY_PROP);
+				.getProperty(EmailProviderConst.MAILGUN_API_KEY_PROP);
 		String authHeader = Base64.encodeBase64String(("api:" + apiKey)
 				.getBytes(Charsets.UTF_8));
 		post.setHeader("Authorization", "Basic " + authHeader);
